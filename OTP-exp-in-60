@@ -10,10 +10,11 @@
     </div>
 
     <script>
+               // The script for random only number..
         // Function to generate a random 6-digit OTP
         
         //function generateOTP() {
-        //    return Math.floor(15 + Math.random() * 454569);
+        //    return Math.floor(10000 + Math.random() * 454569);  // here 10000+math.random() -->will generate multiples ans 454569 is actual length of the file
         //}
         
         function generateOTP() {
@@ -24,7 +25,7 @@
     
     for (let i = 0; i < OTPLength; i++) { // looping
     
-        const randomIndex = Math.floor(Math.random() * characters.length);
+        const randomIndex = Math.floor(Math.random() * characters.length); // pickes up the string from characters and gives the randomise it
         
         OTP += characters.charAt(randomIndex);
     }
