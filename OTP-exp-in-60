@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP Generator</title>
+</head>
+<body>
+    <div id="otp-container">
+        <h1>One-Time Password (OTP) Generator</h1>
+        <p>Your OTP is: <span id="otp"></span></p>
+    </div>
+
+    <script>
+        // Function to generate a random 6-digit OTP
+        
+        //function generateOTP() {
+        //    return Math.floor(15 + Math.random() * 454569);
+        //}
+        
+        function generateOTP() {
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_-+=<>?/";
+    const OTPLength = 6; // You can adjust the length as needed
+
+    let OTP = ""; 
+    
+    for (let i = 0; i < OTPLength; i++) { // looping
+    
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        
+        OTP += characters.charAt(randomIndex);
+    }
+
+    return OTP;
+}
+
+        // Function to display the OTP
+        function displayOTP() {
+            var otpElement = document.getElementById("otp");
+            var otp = generateOTP();
+            otpElement.textContent = otp;
+
+            // Set a timeout to remove the OTP after 60 seconds
+            setTimeout(function () {
+                otpElement.textContent = "OTP expired";
+            }, 60000);
+        }
+
+        // Call the displayOTP function when the page loads
+        window.onload = displayOTP;
+    </script>
+</body>
+</html>
