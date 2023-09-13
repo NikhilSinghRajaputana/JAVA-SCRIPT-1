@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auto Hide Frontend</title>
+</head>
+<body>
+    <div id="content">
+        <h1>Welcome to our website</h1>
+        <p>This is some content that will disappear in 3 seconds.</p>
+    </div>
+
+    <script>
+        // Get the element(s) you want to hide
+        var contentElement = document.getElementById("content");
+
+        // Function to hide the element
+        function hideContent() {
+            contentElement.style.display = "none";
+        }
+
+        // Set a timeout to call the hideContent function after 60 seconds (60000 milliseconds)
+        setTimeout(hideContent, 60000);
+    </script>
+</body>
+</html>
